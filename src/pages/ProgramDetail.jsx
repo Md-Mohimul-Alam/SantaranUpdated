@@ -12,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 
 const programsData = {
-  "harith": {
+"harith": {
     id: "harith",
     title: "Harith",
     description: "Art of environmental development focusing on ecological awareness and sustainability.",
@@ -152,6 +152,154 @@ const programsData = {
         role: "Child Psychologist",
         quote: "The approach Kalpapuri takes to children's artistic development is deeply aligned with psychological research on emotional development and expression.",
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300"
+      }
+    ]
+  },
+  "shikar": {
+    id: "shikar",
+    title: "Shikar",
+    description: "Development and persistence of folk arts & Crafts to preserve cultural heritage and traditional art forms.",
+    fullDescription: "Shikar is our cultural heritage preservation program focused on documenting and revitalizing traditional folk arts and crafts of Bangladesh. Through partnerships with master artisans, we create apprenticeship opportunities that facilitate knowledge transfer to younger generations. The program includes detailed documentation of endangered techniques, creation of contemporary applications for traditional skills, and development of sustainable economic models for artisans. By celebrating indigenous knowledge systems and creative practices, Shikar helps maintain the rich cultural diversity that defines Bangladeshi artistic identity.",
+    icon: "🧶",
+    category: "Folk Arts & Crafts",
+    year: "2019-Present",
+    image: "https://images.unsplash.com/photo-1582210449638-91b2e7825b02?q=80&w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1577083287809-1c774a469596?q=80&w=1200",
+      "https://images.unsplash.com/photo-1563380451434-9e326bb820bb?q=80&w=1200",
+      "https://images.unsplash.com/photo-1567361672830-f7aa558027a2?q=80&w=1200",
+      "https://images.unsplash.com/photo-1493130952181-47e36589f64d?q=80&w=1200"
+    ],
+    location: "Rural regions of Bangladesh",
+    team: ["Abdul Karim", "Nusrat Jahan", "Regional Artisan Collectives", "Cultural Documentation Team"],
+    objectives: [
+      "Document and archive traditional art techniques",
+      "Create economic opportunities for traditional artisans",
+      "Innovate contemporary applications for traditional skills",
+      "Facilitate intergenerational knowledge transfer"
+    ],
+    schedule: [
+      {
+        date: "Year-round",
+        title: "Artisan Apprenticeships",
+        description: "Young artists are paired with master artisans to learn traditional techniques through hands-on practice."
+      },
+      {
+        date: "Monthly",
+        title: "Traditional Arts Market",
+        description: "Monthly marketplace where artisans can sell their handcrafted products directly to consumers, with fair pricing support."
+      },
+      {
+        date: "Biannually",
+        title: "Folk Arts Festival",
+        description: "Celebration of traditional arts featuring performances, demonstrations, and exhibitions from across Bangladesh."
+      }
+    ],
+    resources: [
+      {
+        title: "Traditional Craft Techniques Archive",
+        description: "Digital archive of traditional craft techniques, including high-definition process videos.",
+        type: "Online Archive",
+        url: "#"
+      },
+      {
+        title: "Folk Arts Business Guide",
+        description: "Practical guide for artisans on sustainable business practices and marketing for traditional crafts.",
+        type: "PDF",
+        url: "#"
+      }
+    ],
+    testimonials: [
+      {
+        name: "Rashid Ahmed",
+        role: "Master Weaver",
+        quote: "Shikar has given me hope that the techniques my family has practiced for generations will not be lost. Now I have young apprentices eager to learn and innovate.",
+        image: "https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?q=80&w=300"
+      },
+      {
+        name: "Sadia Khan",
+        role: "Apprentice",
+        quote: "Learning these traditional skills has connected me to my cultural heritage in ways I never expected. Now I'm developing contemporary designs using ancient techniques.",
+        image: "https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=300"
+      }
+    ],
+    faq: [
+      {
+        question: "How can I participate in Shikar as an artisan?",
+        answer: "Traditional artisans can apply through our website or contact our regional coordinators. We're always looking for master craftspeople willing to share their knowledge."
+      },
+      {
+        question: "Does Shikar provide financial support to artisans?",
+        answer: "Yes, we provide stipends to both master artisans and apprentices during the knowledge transfer process, and help establish sustainable business models."
+      }
+    ]
+  },
+  "artfactory": {
+    id: "artfactory",
+    title: "Art Factory",
+    description: "Project for young artists to collaborate, experiment, and showcase innovative artistic approaches.",
+    fullDescription: "Art Factory is our experimental contemporary art incubator, designed to push the boundaries of artistic expression through innovative collaborations. This program provides studio space, materials, mentorship, and exhibition opportunities for emerging artists who are exploring new media, interdisciplinary approaches, and experimental techniques. Participants engage in intensive residencies, collaborative projects, and public interventions that challenge conventional artistic practices. The Art Factory serves as a laboratory for artistic innovation, encouraging risk-taking and critical dialogue about the role of contemporary art in society.",
+    icon: "🎨",
+    category: "Contemporary Art",
+    year: "2022-Present",
+    image: "https://images.unsplash.com/photo-1543857778-c4a1a9e0615f?q=80&w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1582640317571-8e5e21839aae?q=80&w=1200",
+      "https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=1200",
+      "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?q=80&w=1200",
+      "https://images.unsplash.com/photo-1596548438137-d51ea5c83ca5?q=80&w=1200"
+    ],
+    location: "Dhaka Art District",
+    team: ["Tahmina Begum", "Rajon Ali", "Media Art Specialists", "International Artist Network"],
+    objectives: [
+      "Create opportunities for experimental artistic practices",
+      "Establish cross-disciplinary collaborations",
+      "Develop critical dialogue about contemporary art",
+      "Provide professional development for emerging artists"
+    ],
+    schedule: [
+      {
+        date: "Every 3 months",
+        title: "Artist Residencies",
+        description: "Three-month residencies for emerging artists to work on experimental projects with mentorship and resources."
+      },
+      {
+        date: "Weekly",
+        title: "Critical Discussion Forums",
+        description: "Weekly gatherings where artists present their work for peer critique and theoretical discussion."
+      },
+      {
+        date: "Biannually",
+        title: "Experimental Art Exhibition",
+        description: "Major exhibition showcasing the work developed through the Art Factory residencies and collaborations."
+      }
+    ],
+    resources: [
+      {
+        title: "New Media Art Techniques",
+        description: "Guide to digital and hybrid art forms including interactive installations, generative art, and more.",
+        type: "Online Course",
+        url: "#"
+      },
+      {
+        title: "Interdisciplinary Collaboration Toolkit",
+        description: "Methods and frameworks for successful collaboration between artists and other disciplines.",
+        type: "Workshop Materials",
+        url: "#"
+      }
+    ],
+    testimonials: [
+      {
+        name: "Imran Hossain",
+        role: "Emerging Artist",
+        quote: "Art Factory gave me the freedom to take risks that I couldn't take elsewhere. The mentorship and critical feedback transformed my practice completely.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300"
+      },
+      {
+        name: "Priya Sharma",
+        role: "Curator",
+        quote: "The artists coming out of Art Factory are doing some of the most innovative work in South Asia today. They're redefining what contemporary Bangladeshi art can be.",
+        image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=300"
       }
     ]
   }
