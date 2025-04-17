@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 30% 97%;
+    --foreground: 24 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 22 68% 48%;
+    --primary-foreground: 36 33% 96%;
+
+    --secondary: 175 62% 30%;
+    --secondary-foreground: 36 33% 96%;
+
+    --muted: 36 20% 92%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 42 85% 52%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 24 25% 80%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 22 68% 48%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 22 68% 48%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 175 62% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 42 85% 52%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 42 85% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-santaran-cream text-foreground font-sans overflow-x-hidden;
+  }
+  
+  ::selection {
+    @apply bg-santaran-vermilion/30 text-santaran-vermilion;
+  }
+
+  h1, .h1 {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+    background: linear-gradient(135deg, #DE4D31, #F9A826);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.5s ease;
+  }
+  
+  h2, .h2 {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-normal;
+    background: linear-gradient(135deg, #158A8A, #6B8E4E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  h3, .h3 {
+    @apply font-serif text-2xl md:text-3xl lg:text-4xl font-medium leading-snug;
+  }
+  
+  h4, .h4 {
+    @apply font-display text-xl md:text-2xl font-medium leading-snug;
+  }
+  
+  p {
+    @apply font-sans text-base md:text-lg leading-relaxed;
+  }
+
+  .artistic-text {
+    @apply font-serif italic tracking-wide;
+  }
+
+  .caption-text {
+    @apply font-display text-sm tracking-wider uppercase;
+  }
+}
+
+@layer components {
+  .heading-xl {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  .heading-lg {
+    @apply font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-tight;
+  }
+  
+  .heading-md {
+    @apply font-display text-xl sm:text-2xl md:text-3xl font-semibold leading-snug;
+  }
+  
+  .heading-sm {
+    @apply font-display text-lg sm:text-xl md:text-2xl font-semibold leading-snug;
+  }
+  
+  .program-card {
+    @apply relative bg-white p-4 sm:p-6 rounded-lg shadow-md border-2 border-santaran-jade/20 hover:border-santaran-jade transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .program-card:hover {
+    transform: translateY(-12px);
+  }
+  
+  .program-card::before {
+    @apply content-[''] absolute top-0 left-0 w-1 h-full bg-santaran-vermilion transform origin-bottom scale-y-0 transition-transform duration-300;
+  }
+  
+  .program-card:hover::before {
+    @apply scale-y-100;
+  }
+  
+  .card-hover {
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+  
+  .nav-link {
+    @apply relative text-base sm:text-lg font-medium px-2 sm:px-3 py-2 transition-colors hover:text-santaran-jade;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-santaran-jade origin-bottom-right transition-transform duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+  
+  .nav-link.active {
+    @apply text-santaran-vermilion;
+  }
+  
+  .nav-link.active::after {
+    @apply scale-x-100 bg-santaran-vermilion;
+  }
+  
+  .btn {
+    @apply px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 transform font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-santaran-vermilion text-white hover:bg-santaran-vermilion/90 active:scale-95 shadow-lg shadow-santaran-vermilion/20 hover:shadow-xl hover:shadow-santaran-vermilion/30;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-santaran-jade text-santaran-jade hover:bg-santaran-jade hover:text-white active:scale-95 shadow-md hover:shadow-lg;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .artistic-input {
+    @apply bg-transparent border-b-2 border-santaran-jade/50 focus:border-santaran-jade px-0 py-2 outline-none transition-all w-full;
+  }
+  
+  .glassmorphic {
+    @apply bg-white/70 backdrop-blur-md shadow-lg border border-white/20 rounded-xl;
+  }
+
+  .art-button {
+    @apply inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-all duration-300 bg-gradient-to-r from-santaran-vermilion to-santaran-amber text-white font-medium shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0;
+  }
+
+  .art-button-outline {
+    @apply inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-all duration-300 border-2 border-santaran-jade bg-transparent text-santaran-jade font-medium hover:bg-santaran-jade/10 active:bg-santaran-jade/20;
+  }
+
+  .art-button-subtle {
+    @apply inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition-all duration-300 bg-santaran-cream text-santaran-indigo font-medium hover:bg-santaran-cream/80 active:bg-santaran-cream/70;
+  }
+
+  .art-icon-button {
+    @apply inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-santaran-jade/20 text-santaran-jade transition-all duration-300 hover:bg-santaran-jade hover:text-white shadow-md hover:shadow-lg;
+  }
+  
+  .artistic-card {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-santaran-cream/50 border border-santaran-jade/10 shadow-lg hover:shadow-xl transition-all duration-500 p-5 sm:p-6;
+  }
+  
+  .artistic-card::before {
+    content: '';
+    @apply absolute -top-40 -right-40 w-80 h-80 bg-santaran-amber/5 rounded-full blur-3xl;
+  }
+  
+  .artistic-card::after {
+    content: '';
+    @apply absolute -bottom-40 -left-40 w-80 h-80 bg-santaran-vermilion/5 rounded-full blur-3xl;
+  }
+  
+  .fancy-border {
+    @apply relative;
+  }
+  
+  .fancy-border::before {
+    content: '';
+    @apply absolute inset-0 border-2 border-santaran-jade/20 rounded-xl -z-10 transition-all duration-300;
+    transform: translate(7px, 7px);
+  }
+  
+  .fancy-border:hover::before {
+    @apply border-santaran-vermilion/30;
+    transform: translate(5px, 5px);
+  }
+  
+  .animated-bg {
+    background: linear-gradient(-45deg, #DE4D31, #158A8A, #F9A826, #375375);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .fancy-underline {
+    @apply relative inline-block;
+  }
+  
+  .fancy-underline::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-santaran-vermilion to-santaran-amber scale-x-0 origin-bottom-left transition-transform duration-300;
+  }
+  
+  .fancy-underline:hover::after {
+    @apply scale-x-100;
+  }
+  
+  .artistic-image {
+    @apply rounded-lg overflow-hidden relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+  }
+  
+  .canvas-texture {
+    @apply relative;
+  }
+  
+  .canvas-texture::before {
+    content: '';
+    @apply absolute inset-0 bg-canvas-texture opacity-10 mix-blend-multiply pointer-events-none;
+  }
+  
+  .hover-reveal {
+    @apply relative overflow-hidden;
+  }
+
+  .hover-reveal::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-santaran-vermilion transform scale-x-0 origin-left transition-transform duration-300;
+  }
+
+  .hover-reveal:hover::after {
+    @apply scale-x-100;
+  }
+
+  .artistic-link {
+    @apply relative inline-block px-1 py-0.5 overflow-hidden transition-colors duration-300 hover:text-santaran-vermilion;
+  }
+
+  .artistic-link::before {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-current transform origin-right scale-x-0 transition-transform duration-500;
+  }
+
+  .artistic-link:hover::before {
+    @apply transform origin-left scale-x-100;
+  }
+
+  .art-card {
+    @apply relative overflow-hidden rounded-lg transition-all duration-500 hover:shadow-xl;
+  }
+
+  .art-card::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-0 transition-opacity duration-300;
+  }
+
+  .art-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .art-image {
+    @apply transition-transform duration-700 hover:scale-110;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DE4D31;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #158A8A;
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .program-card {
+    @apply p-4;
+  }
+}
